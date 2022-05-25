@@ -1,0 +1,117 @@
+// fonts Lexend Dexa 400, Big Shoulder Display 700
+@import url('https://fonts.googleapis.com/css2?family=Lexend+Deca&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700&display=swap');
+
+$h-font: 'Big Shoulders Display', cursive;
+$p-font: 'Lexend Deca', sans-serif;
+
+// Colors
+$bright-orange: hsl(31, 77%, 52%);
+$dark-cyan: hsl(184, 100%, 22%);
+$very-dark-cyan: hsl(179, 100%, 13%);
+
+$transparent-white: hsla(0, 0%, 100%, 0.75);        // paragraph color
+$very-light-gray: hsl(0, 0%, 95%);                  // heading, background, buttons
+
+html {
+    font-size: .9375rem;
+    box-sizing: border-box;
+}
+body {
+    margin: 0 auto;
+    padding: 0;
+    background-color: $very-light-gray;
+}
+h1 {
+    font-family: $h-font;
+    color: $transparent-white;
+    text-transform: uppercase;
+}
+p {
+    font-family: $p-font;
+    color: $transparent-white;
+    line-height: 1.5rem;
+    padding-right: 2rem;
+    font-size: .75rem;
+}
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(12.5rem, 1fr));
+    grid-template-rows: 28rem;
+    justify-content: center;
+    border-radius: 0.625rem;
+    overflow: hidden;
+    margin-top: 5rem;
+    margin-left: auto;
+    margin-right: auto;
+    width: 44.53125rem;
+    height: 23.75rem;
+    column-gap: 0;
+
+    @media screen and (max-width: 45rem) {
+        display: grid;
+        width: 14.9479167rem;
+        height: 71.25rem;
+        align-items: stretch;
+        grid-template-rows: 23.75rem;
+    }
+
+    .card1, .card2, .card3 {
+        display: flex;
+        flex-direction: column;
+        padding-left: 2.5rem;
+        width: 12.5rem;
+        height: 23.75rem;
+
+        @media screen and (max-width: 45rem) {
+            width: 12.5rem;
+            height: 23.75rem;
+            row-gap: 10;
+        }
+    }
+
+    .card1 {
+        background-color: $bright-orange;
+    }
+    .card2 {
+        background-color: $dark-cyan;
+    }
+    .card3 {
+        background-color: $very-dark-cyan;
+    }
+
+    button {
+        border: 2px solid $transparent-white;
+        background-color: hsla(0, 0%, 100%);
+        width: 7rem;
+        opacity: 1;
+        border-radius: 1.25rem;
+        padding: 0.5rem 0.1rem;
+        font-size: .8rem;
+        font-family: $p-font;
+        transition-duration: .4s;
+        cursor: pointer;
+        margin-top: 1rem;
+
+        &:hover {
+            background: transparent;
+            color: $transparent-white;
+        }
+    }
+    .btn1 {
+        color: $bright-orange;
+    }
+    .btn2 {
+        color: $dark-cyan;
+    }
+    .btn3 {
+        color: $very-dark-cyan;
+    }
+    .img1, .img2, .img3 {
+        margin-top: 2.5rem;
+        
+        img {
+            width: 3rem;
+        }
+    }
+}
